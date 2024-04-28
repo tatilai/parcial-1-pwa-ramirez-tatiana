@@ -44,13 +44,13 @@ function mostrarPokemon(data){
     const div =document.createElement("div");
     div.classList.add("pokemon");
     div.innerHTML=` 
-    <p class="pokemon-id-back">#025</p>
+    <p class="pokemon-id-back">${data.id}</p>
      <div class ="pokemon-imagen">
-       <img src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt= bulbasaur>
+       <img src= "${data.sprites.other["official-artwork"].front_default}" alt= "${data.name}">
      </div>
      <div class="pokemon-info">
        <div class="nombre-contenedor">
-           <p class="pokemon-id">#025</p>
+           <p class="pokemon-id">${data.id}</p>
            <h2 class="pokemon-nombre">${data.name}</h2>
        </div>
        <div class="pokemon-tipos">
