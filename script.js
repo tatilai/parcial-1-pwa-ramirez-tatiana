@@ -4,7 +4,8 @@ console.log(url_pokemones);
 
 fetch(url_pokemones)
 .then(data=>data.json())
-.then (resultado=>{
-    const resultados=resultado.resultados;
-    console.log("resultados", resultados)
+.then (result=>{
+    const results=result.results;
+    const primerResultado = results [0];
+    console.log(primerResultado);
 })
