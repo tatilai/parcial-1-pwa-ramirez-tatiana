@@ -61,6 +61,8 @@ function mostrarPokemon(data){
        <p class="stat">4m</p>
        <p class ="stat">60kg</p>
        </div>
+       
+       <button class="btn btn-mas"> Ver más</button>
        </div>
      `;
      listaPokemon.append(div);
