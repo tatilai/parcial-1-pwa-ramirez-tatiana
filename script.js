@@ -44,26 +44,34 @@ function mostrarPokemon(data){
     const div =document.createElement("div");
     div.classList.add("pokemon");
     div.innerHTML=` 
-    <p class="pokemon-id-back">#${data.id}</p>
-     <div class ="pokemon-imagen">
-       <img src= "${data.sprites.other["official-artwork"].front_default}" alt= "${data.name}">
-     </div>
-     <div class="pokemon-info">
-       <div class="nombre-contenedor">
-           <p class="pokemon-id">${data.id}</p>
-           <h2 class="pokemon-nombre">${data.name}</h2>
-       </div>
-       <div class="pokemon-tipos">
-        <p class="electric tipo">electric</p>
-         <p class="fighting tipo">fighting</p>
-       </div>
-     <div class="pokemon-stats">
-       <p class="stat">4m</p>
-       <p class ="stat">60kg</p>
-       </div>
-       
-       <button class="btn btn-mas"> Ver más</button>
-       </div>
+    <div class="pokemon">
+
+                <p class="pokemon-id-back">#${data.id}</p>
+                <div class ="pokemon-imagen">
+                    <img src= "${data.sprites.other["official-artwork"].front_default}" alt= "${data.name}">
+               </div>
+               <div class="pokemon-info">
+                <div class="nombre-contenedor">
+                    <p class="pokemon-id">
+                        #${data.id}</p>
+                        <h2 class="pokemon-nombre">${data.name}</h2>
+                </div>
+                <div class="pokemon-tipos">
+                    <p class="electric tipo">Electric</p>
+                    <p class="fighting tipo">fighting</p>
+                </div>
+
+                <div class="stats">
+                    <p class="stats">${data.height}m</p>
+                    <p class="stats">${data.weight}kg</p>
+                </div>
+
+                <button class="btn btn-mas"> Ver más</button>
+
+               </div>
+
+            </div>
+  
      `;
      listaPokemon.append(div);
 }
