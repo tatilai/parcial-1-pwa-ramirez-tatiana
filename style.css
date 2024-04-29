@@ -135,3 +135,9 @@ body{
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        .pokemon-id{
+            background-color:rgb(234, 234, 234) ;
+            padding: .25rem .5rem;
+            border-radius: 100vmax;
+        }
