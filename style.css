@@ -108,11 +108,30 @@ body{
             font-weight: 800;
             color: rgb(177, 177, 177);
             z-index: -1;
-            color: rgb(209, 209, 209);
+            color: rgb(234, 234, 234);
            
         }
 
         .pokemon-imagen{
             padding-inline: 1rem;
+            display: flex; 
+            justify-content:center;
+            
+        }
+
+        .pokemon-info{
+            display:flex;
+            flex-direction: column;
+            gap: .5rem;
+            padding-inline: 1rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .nombre-contenedor{
             display: flex;
+            align-items: center;
+            column-gap: .5rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
