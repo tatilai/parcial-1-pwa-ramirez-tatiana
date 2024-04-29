@@ -68,11 +68,14 @@ function mostrarPokemon(data){
 
                 <button class="btn btn-mas"> Ver más</button>
 
+                
+
                </div>
 
             </div>
   
      `;
+    
      listaPokemon.append(div);
 }
 
