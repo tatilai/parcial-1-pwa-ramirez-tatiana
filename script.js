@@ -30,7 +30,7 @@ fetch(url_pokemones)
 })*/
 
 
-const listaPokemon=document.querySelector("#listaPokemon");
+/*const listaPokemon=document.querySelector("#listaPokemon");
 const url_pokemones = "https://pokeapi.co/api/v2/pokemon/";
 
 for (let i=1; i<=100; i++){
@@ -77,6 +77,28 @@ function mostrarPokemon(data){
      `;
     
      listaPokemon.append(div);
+}*/
+
+javascript
+const listaPokemon = document.querySelector("#listaPokemon");
+const url_pokemones = "https://pokeapi.co/api/v2/pokemon/";
+
+// Crear un array vacío para almacenar los datos de los Pokémon
+const pokemonData = [];
+
+// Hacer las solicitudes a la API y almacenar los datos en el array
+for (let i = 1; i <= 100; i++) {
+  fetch(url_pokemones + i)
+    .then((response) => response.json())
+    .then((data) => {
+      pokemonData.push(data);
+      if (pokemonData.length === 100) {
+        // Ordenar el array por ID en orden ascendente
+        pokemonData.sort((a, b) => a.id - b.id);
+        // Mostrar los Pokémon en orden
+        pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
+      }
+    });
 }
 
 /**
