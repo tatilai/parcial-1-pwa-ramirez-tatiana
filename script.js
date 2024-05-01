@@ -33,11 +33,35 @@ fetch(url_pokemones)
 const listaPokemon=document.querySelector("#listaPokemon");
 const url_pokemones = "https://pokeapi.co/api/v2/pokemon/";
 
-for (let i=1; i<=100; i++){
+/*for (let i=1; i<=100; i++){
     fetch(url_pokemones + i)
     .then((response)=> response.json())
+    .then (data=>{
+        const datosOrdenados=data.data;
+        datosOrdenados.sort((a,b)=>{
+
+        })
+    })
     .then(data=>mostrarPokemon(data))
+   
+}*/
+
+
+const pokemones =[];
+
+for (let i=1; i<=100; i++){
+    fetch(url_pokemones + i)
+    .then((response)=>response.json())
+    .then((data)=>{
+        pokemones.push(data);
+        if(pokemones.length===100){
+            pokemones.sort((a,b)=>a.id - b.id);
+            pokemones.forEach((pokemon)=>mostrarPokemon(pokemon))
+        }
+    });
 }
+ 
+
 
 function mostrarPokemon(data){
 
