@@ -30,7 +30,7 @@ fetch(url_pokemones)
 })*/
 
 
-/*const listaPokemon=document.querySelector("#listaPokemon");
+const listaPokemon=document.querySelector("#listaPokemon");
 const url_pokemones = "https://pokeapi.co/api/v2/pokemon/";
 
 for (let i=1; i<=100; i++){
@@ -77,10 +77,10 @@ function mostrarPokemon(data){
      `;
     
      listaPokemon.append(div);
-}*/
+}
 
-javascript
-const listaPokemon = document.querySelector("#listaPokemon");
+
+/*const listaPokemon = document.querySelector("#listaPokemon");
 const url_pokemones = "https://pokeapi.co/api/v2/pokemon/";
 
 // Crear un array vacío para almacenar los datos de los Pokémon
@@ -100,6 +100,37 @@ for (let i = 1; i <= 100; i++) {
       }
     });
 }
+
+function mostrarPokemon(data) {
+    // Código para mostrar los Pokémon
+    const div = document.createElement("div");
+    div.classList.add("pokemon");
+    div.innerHTML = `
+      <div class="pokemon">
+        <p class="pokemon-id-back">#${data.id}</p>
+        <div class="pokemon-imagen">
+          <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}">
+        </div>
+        <div class="pokemon-info">
+          <div class="nombre-contenedor">
+            <p class="pokemon-id">#${data.id}</p>
+            <h2 class="pokemon-nombre">${data.name}</h2>
+          </div>
+          <div class="pokemon-tipos">
+            <p class="electric tipo">Electric</p>
+            <p class="fighting tipo">fighting</p>
+          </div>
+          <div class="stats">
+            <p class="stats">${data.height}m</p>
+            <p class="stats">${data.weight}kg</p>
+          </div>
+          <button class="btn btn-mas">Ver más</button>
+        </div>
+      </div>
+    `;
+    listaPokemon.append(div);
+  }
+  */
 
 /**
  *  <div class="pokemon">
