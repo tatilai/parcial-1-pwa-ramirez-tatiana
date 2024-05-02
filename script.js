@@ -69,17 +69,14 @@ function mostrarPokemon(data){
                         #${data.id}</p>
                         <h2 class="pokemon-nombre">${data.name}</h2>
                 </div>
-                <div class="pokemon-tipos">
-                    <p class="electric tipo">Electric</p>
-                    <p class="fighting tipo">fighting</p>
-                </div>
+              
 
                 <div class="stats">
                     <p class="stats">${data.height}m</p>
                     <p class="stats">${data.weight}kg</p>
                 </div>
 
-                <button class="btn btn-mas"> Ver más</button>
+              <a href="detalles.html?id=${data.id}" class="btn btn-mas">Ver más</a>
 
                 
 
