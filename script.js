@@ -90,3 +90,13 @@ function mostrarPokemon(data){
 }
 
 
+
+document,addEventListener('DOMContentLoaded',()=>{
+    const btnHistorial = document.getElementById('btnHistorial');
+    btnHistorial.addEventListener('click',()=>{
+        guardarEnHistorial();
+        window.location.href ='historial.href';
+    });
+});
+
+
