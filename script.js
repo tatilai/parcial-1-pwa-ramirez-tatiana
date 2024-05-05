@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Agregar evento de clic al botón de historial
     btnHistorial.addEventListener('click', () => {
-        console.log('boton historial clikeado');
+        //console.log('boton historial clikeado');
       
         window.location.href = 'historial.html';
     });
@@ -106,3 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function consultarDatos(){
+    return new Promise ((resolve,reject)=>{
+        fetch("https://pokeapi.co/api/v2/pokemon/")
+        .then(response =>response.json())
+        .then(data=>resolve(data))
+        .catch(error=reject(error));
+    });
+}
+
+
+
+consultarDatos().then(datos => {
+    
+    const busqueda = document.getElementById("busqueda");
+    busqueda.addEventListener("search", (e)=> {
+        console.log(e.target.value)
+        //se filtra el array
+        mostrarDatos(datos); // muestro el array filtrado
+    });
+
+});
