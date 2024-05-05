@@ -5,6 +5,10 @@ const pokemonId=params.get('id');
 
 }));*/
 
+
+let historial =[];
+
+
 document.addEventListener('DOMContentLoaded',()=>{
 
     const params=new URLSearchParams(window.location.search);
@@ -37,21 +41,28 @@ function mostrarDetalles(data){
     `
 
     guardarEnHistorial(data.id);
+
 }
 
-/*function guardarEnHistorial(pokemonId){
-    let historial = JSON.parse(localStorage.getItem('historial'))|| [];
 
 
-    historial.push(pokemonId);
-
-    localStorage.setItem('historial',JSON.stringify(historial));
-}*/
+function guardarEnHistorial(pokemonId){
+    let historial = JSON.parse(localStorage.getItem('historial')) || [] ;
 
 
+    if (!historial.includes(pokemonId)) {
+        historial.push(pokemonId);
+        localStorage.setItem('historial', JSON.stringify(historial));
+    }
+  //  historial.push(pokemonId);
+
+  //  localStorage.setItem('historial',JSON.stringify(historial));
+}
 
 
-let historial = [];
+
+
+/*let historial = [];
 const historialJSON = localStorage.getItem('historial');
 
 if (historialJSON) {
@@ -67,4 +78,5 @@ if (historialJSON) {
 function guardarEnHistorial(pokemonId){
     historial.push(pokemonId);
     localStorage.setItem('historial', JSON.stringify(historial));
-}
+    console.log('Mostrando historial')
+}*/

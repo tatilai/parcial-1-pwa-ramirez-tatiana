@@ -91,12 +91,19 @@ function mostrarPokemon(data){
 
 
 
-document.addEventListener('DOMContentLoaded',()=>{
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtener el botón de historial una vez que el DOM esté cargado
     const btnHistorial = document.getElementById('btnHistorial');
-    btnHistorial.addEventListener('click',()=>{
-      //  guardarEnHistorial();
-        window.location.href ='historial.html';
+
+    // Agregar evento de clic al botón de historial
+    btnHistorial.addEventListener('click', () => {
+        console.log('boton historial clikeado');
+        // Guardar en el historial y redirigir a la página historial.html
+       //guardarEnHistorial();
+        window.location.href = 'historial.html';
     });
+
 });
 
 
