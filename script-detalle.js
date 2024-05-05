@@ -54,29 +54,11 @@ function guardarEnHistorial(pokemonId){
         historial.push(pokemonId);
         localStorage.setItem('historial', JSON.stringify(historial));
     }
-  //  historial.push(pokemonId);
-
-  //  localStorage.setItem('historial',JSON.stringify(historial));
-}
-
-
-
-
-/*let historial = [];
-const historialJSON = localStorage.getItem('historial');
-
-if (historialJSON) {
-    try {
-        historial = JSON.parse(historialJSON);
-    } catch (error) {
-        console.error('Error al analizar el historial JSON:', error);
-        
-    }
-}
-
-
-function guardarEnHistorial(pokemonId){
     historial.push(pokemonId);
-    localStorage.setItem('historial', JSON.stringify(historial));
-    console.log('Mostrando historial')
-}*/
+
+    localStorage.setItem('historial',JSON.stringify(historial));
+}
+
+
+
+

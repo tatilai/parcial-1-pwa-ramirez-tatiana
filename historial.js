@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener el botón de historial una vez que el DOM esté cargado
+    
    
 
     // Obtener el historial y mostrarlo en el DOM
