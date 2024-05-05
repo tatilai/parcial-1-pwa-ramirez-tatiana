@@ -39,11 +39,32 @@ function mostrarDetalles(data){
     guardarEnHistorial(data.id);
 }
 
-function guardarEnHistorial(pokemonId){
+/*function guardarEnHistorial(pokemonId){
     let historial = JSON.parse(localStorage.getItem('historial'))|| [];
 
 
     historial.push(pokemonId);
 
     localStorage.setItem('historial',JSON.stringify(historial));
+}*/
+
+
+
+
+let historial = [];
+const historialJSON = localStorage.getItem('historial');
+
+if (historialJSON) {
+    try {
+        historial = JSON.parse(historialJSON);
+    } catch (error) {
+        console.error('Error al analizar el historial JSON:', error);
+        
+    }
+}
+
+
+function guardarEnHistorial(pokemonId){
+    historial.push(pokemonId);
+    localStorage.setItem('historial', JSON.stringify(historial));
 }
