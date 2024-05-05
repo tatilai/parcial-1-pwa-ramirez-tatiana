@@ -56,7 +56,7 @@ function guardarEnHistorial(pokemonId){
     }
     historial.push(pokemonId);
 
-    localStorage.setItem('historial',JSON.stringify(historial));
+  //  localStorage.setItem('historial',JSON.stringify(historial));
 }
 
 

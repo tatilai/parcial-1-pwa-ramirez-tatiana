@@ -99,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Agregar evento de clic al botón de historial
     btnHistorial.addEventListener('click', () => {
         console.log('boton historial clikeado');
-        // Guardar en el historial y redirigir a la página historial.html
-       //guardarEnHistorial();
+      
         window.location.href = 'historial.html';
     });
 

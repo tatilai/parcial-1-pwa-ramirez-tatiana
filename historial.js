@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
                 .then(response => response.json())
                 .then(data => {
+
+                   
                     const listaItem = document.createElement('li');
                     listaItem.textContent = `Pokemon ID: ${pokemonId}, Nombre: ${data.name}`;
                     historialLista.appendChild(listaItem);
