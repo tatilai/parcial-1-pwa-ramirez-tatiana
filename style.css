@@ -234,4 +234,6 @@ body{
            
         }
 
-        
+        .filtro{
+            display: none;
+        }

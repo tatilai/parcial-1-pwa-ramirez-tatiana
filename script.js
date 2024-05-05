@@ -106,18 +106,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function consultarDatos(){
+
+document.addEventListener("keyup",e=>{
+    if(e.target.matches("#busqueda")){
+
+        document.querySelectorAll(".pokemon").forEach(tipoPokemones=>{
+            tipoPokemones.textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())?tipoPokemones.classList.remove("filtro"):tipoPokemones.classList.add("filtro")
+        })
+    }
+})
+
+
+/*function consultarDatos(){
     return new Promise ((resolve,reject)=>{
         fetch("https://pokeapi.co/api/v2/pokemon/")
         .then(response =>response.json())
         .then(data=>resolve(data))
-        .catch(error=reject(error));
+        .catch(error=>reject(error));
     });
 }
 
 
-
 consultarDatos().then(datos => {
+    if (datos.results) {
+        const busqueda = document.getElementById("busqueda");
+        busqueda.addEventListener("input", (e) => {
+            const valorBusqueda = e.target.value.toLowerCase();
+            const pokemonesFiltrados = datos.results.filter(pokemon => {
+                return pokemon.name.toLowerCase().includes(valorBusqueda);
+            });
+            listaPokemon.innerHTML = '';
+            pokemonesFiltrados.forEach(pokemon => {
+                mostrarPokemon(pokemon);
+            });
+        });
+    } else {
+        console.error('La propiedad results no está definida en los datos.');
+    }
+}).catch(error => {
+    console.error('Error al consultar datos:', error);
+});*/
+
+/*consultarDatos().then(datos=>{
+    if{  
+        const busqueda = document.getElementById("busqueda");
+    busqueda.addEventListener("input",(e)=>{
+        const valorBusqueda =e.target.value.toLowerCase();
+        const pokemonesFiltrados=datos.filter
+        console.log(datos);
+        (pokemon=>{
+            return pokemon.name.toLowerCase.includes(valorBusqueda);
+        });
+        listaPokemon.innerHTML='';
+        pokemonesFiltrados.forEach(pokemon=>{
+            mostrarPokemon(pokemon);
+        });
+    })
+} else{
+    console.error('La propiedad results no est definida en los datos.')
+}
+}).catch(error=>{
+    console.error('Error al consultar datos',error);
+});*/
+
+
+
+/*consultarDatos().then(datos => {
     
     const busqueda = document.getElementById("busqueda");
     busqueda.addEventListener("search", (e)=> {
@@ -126,4 +180,4 @@ consultarDatos().then(datos => {
         mostrarDatos(datos); // muestro el array filtrado
     });
 
-});
+});*/
