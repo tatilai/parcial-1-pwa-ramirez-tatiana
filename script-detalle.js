@@ -23,6 +23,8 @@ function mostrarDetalles(data){
     <img src= "${data.sprites.other["official-artwork"].front_default}" alt= "${data.name}">
     </div>
     <div class="texto">
+    <p class="pokemon-id">
+    #${data.id}</p>
     <p>Experiencia base: ${data.base_experience}</p>
     <p>Orden en la pokedex: ${data.order}</p>
     <p>Habilidades:</p>
@@ -33,4 +35,15 @@ function mostrarDetalles(data){
     
     
     `
+
+    guardarEnHistorial(data.id);
+}
+
+function guardarEnHistorial(pokemonId){
+    let historial = JSON.parse(localStorage.getItem('historial'))|| [];
+
+
+    historial.push(pokemonId);
+
+    localStorage.setItem('historial',JSON.stringify(historial));
 }

@@ -91,10 +91,10 @@ function mostrarPokemon(data){
 
 
 
-document,addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded',()=>{
     const btnHistorial = document.getElementById('btnHistorial');
     btnHistorial.addEventListener('click',()=>{
-        guardarEnHistorial();
+      //  guardarEnHistorial();
         window.location.href ='historial.html';
     });
 });
